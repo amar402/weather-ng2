@@ -6,7 +6,7 @@ import { Weather } from './weather';
 
 @Injectable()
 export class WeatherService {
-  private weather:Weather = new Weather('Provo', '100', 'sunny', '50', '200', '1:20', '5:20') ;
+  private weather:Weather = new Weather(' ', ' ', ' ', ' ', ' ') ;
   constructor(private http:Http) { }
 
   currentLocation(lat:string, lon:string){

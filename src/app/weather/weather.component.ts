@@ -27,7 +27,7 @@ export class WeatherComponent implements OnInit {
     const lon = this.location.longitude.toString();
     this.weatherSer.currentLocation(lat, lon).subscribe(
       (data) => {
-        this.weatherClass = new Weather(data.name, data.main.temp, data.weather[0].description, data.main.temp_min, data.main.temp_max, data.sys.sunrise, data.sys.sunset);
+        this.weatherClass = new Weather(data.name, data.main.temp, data.weather[0].description, data.main.temp_min, data.main.temp_max);
         console.log(data);
       }
     )
@@ -36,7 +36,7 @@ export class WeatherComponent implements OnInit {
   onSubmit(weatherForm: NgForm){
     this.weatherSer.otherWeather(weatherForm.value.city).subscribe(
       (data) => {
-        this.weatherClass = new Weather(data.name, data.main.temp, data.weather[0].description, data.main.temp_min, data.main.temp_max, data.sys.sunrise, data.sys.sunset);
+        this.weatherClass = new Weather(data.name, data.main.temp, data.weather[0].description, data.main.temp_min, data.main.temp_max);
         console.log(this.weatherClass);
       }
     )

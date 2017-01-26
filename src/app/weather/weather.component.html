@@ -8,10 +8,6 @@
       <h4 class="tempMax tempM">temp min: {{weatherClass?.tempMin}}&deg;</h4>
       <h4 class="tempMin tempM">temp max: {{weatherClass.tempMax}}&deg;</h4>
     </div>
-    <div class="info suntime">
-      <h4 class="sunrise">sunrise: {{weatherClass?.sunrise}}</h4>
-      <h4 class="sunset">sunset: {{weatherClass?.sunset}}</h4>
-    </div>
   </div>
   <form class="lookCity" (ngSubmit)=onSubmit(f) #f="ngForm">
     <input type="text" class="cityName" name="city" ngModel #city="ngModel" placeholder="Name of a city">
