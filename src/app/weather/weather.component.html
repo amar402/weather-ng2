@@ -1,20 +1,20 @@
 <div class="wrapper">
-  <h2 class="city">Name of the city</h2>
-  <h1 class="temperature">72&deg;</h1>
-  <h4 class="description">what</h4>
+  <h2 class="city">{{weatherClass?.cityName}}</h2>
+  <h1 class="temperature">{{weatherClass?.temp}}&deg;</h1>
+  <h4 class="description">{{weatherClass?.type}}</h4>
   <!-- IMAGE WILL GO HERE -->
   <div class="pan">
     <div class="into temp">
-      <h4 class="tempMax tempM">temp min: 23&deg;</h4>
-      <h4 class="tempMin tempM">temp max: 10&deg;</h4>
+      <h4 class="tempMax tempM">temp min: {{weatherClass?.tempMin}}&deg;</h4>
+      <h4 class="tempMin tempM">temp max: {{weatherClass.tempMax}}&deg;</h4>
     </div>
     <div class="info suntime">
-      <h4 class="sunrise">sunrise: 7:20 am</h4>
-      <h4 class="sunset">sunset: 4:30 pm</h4>
+      <h4 class="sunrise">sunrise: {{weatherClass?.sunrise}}</h4>
+      <h4 class="sunset">sunset: {{weatherClass?.sunset}}</h4>
     </div>
   </div>
-  <form class="lookCity">
-    <input type="text" class="cityName">
+  <form class="lookCity" (ngSubmit)=onSubmit(f) #f="ngForm">
+    <input type="text" class="cityName" name="city" ngModel #city="ngModel" placeholder="Name of a city">
     <button class="btn" name="button">go</button>
   </form>
 </div>
