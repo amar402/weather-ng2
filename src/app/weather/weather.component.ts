@@ -17,7 +17,7 @@ export class WeatherComponent implements OnInit {
   weatherClass:Weather;
   location:any = {};
   ngOnInit() {
-    this.weatherClass = this.weatherSer.dummyWeather();
+    // this.weatherClass = this.weatherSer.dummyWeather();
     navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
   }
 
