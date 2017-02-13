@@ -7,12 +7,17 @@
   };
   width: 30%;
   height: 534px;
-  margin: 0 auto;
+  margin: 5em auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   color: $dark;
   text-align: center;
+
+  img{
+    width: 60%;
+    margin:0 20%;
+  }
 
   .city{
     font:{
@@ -66,6 +71,7 @@
     background-color: $blue;
     border:0;
     width:25%;
+    height:25px;
     color:white;
     cursor: pointer;
     @include transition;

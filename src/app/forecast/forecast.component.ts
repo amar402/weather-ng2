@@ -19,11 +19,11 @@ export class ForecastComponent implements OnInit {
   ngOnInit() {
     this.forecastForm = new FormGroup({
       forecastCity: new FormControl('')
-    })
+    });
   }
 
   onSubmit(){
-    this.forecast;
+    this.forecast.splice(0, this.forecast.length);
     this.weatherSer.otherForecast(this.forecastForm.value.forecastCity).subscribe(
       (data) =>{
         console.log(data);
@@ -41,5 +41,4 @@ export class ForecastComponent implements OnInit {
       }
     )
   }
-
 }

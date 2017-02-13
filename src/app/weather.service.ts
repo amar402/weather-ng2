@@ -6,7 +6,7 @@ import { Weather } from './weather';
 
 @Injectable()
 export class WeatherService {
-  private weather:Weather = new Weather(' ', ' ', ' ', ' ', ' ') ;
+  private weather:Weather[] = [] ;
   weatherClass:Weather;
   location;
   constructor(private http:Http) { }
@@ -22,7 +22,7 @@ export class WeatherService {
         console.log(`lat ${lat} and lon ${lon}`);
         return this.http.get(`http://api.openweathermap.org/data/2.5/weather?appid=0f3fb9fa31ad3d41f1bb2bd0841c3f2f&lat=${lat}&lon=${lon}&units=imperial`).map((response:Response) => response.json()).toPromise().then(
           (data) => {
-            this.weatherClass = new Weather(data.name, data.main.temp, data.weather[0].description, data.main.temp_min, data.main.temp_max);
+            this.weatherClass = new Weather(data.name, data.main.temp, data.weather[0].description, data.main.temp_min, data.main.temp_max, data.weather[0].icon);
             res(this.weatherClass);
             return this.weatherClass;
           }
@@ -40,4 +40,5 @@ export class WeatherService {
   otherForecast(city:string){
     return this.http.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city},us&appid=0f3fb9fa31ad3d41f1bb2bd0841c3f2f&units=imperial`).map((response:Response) => response.json())
   }
+
 }

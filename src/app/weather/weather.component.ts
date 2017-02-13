@@ -27,7 +27,7 @@ export class WeatherComponent implements OnInit {
   onSubmit(weatherForm: NgForm){
     this.weatherSer.otherWeather(weatherForm.value.city).subscribe(
       (data) => {
-        this.weatherClass = new Weather(data.name, data.main.temp, data.weather[0].description, data.main.temp_min, data.main.temp_max);
+        this.weatherClass = new Weather(data.name, data.main.temp, data.weather[0].description, data.main.temp_min, data.main.temp_max, data.weather[0].icon);
         console.log(this.weatherClass);
       }
     )

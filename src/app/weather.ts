@@ -3,5 +3,6 @@ export class Weather {
               public temp:string,
               public type:string,
               public tempMin:string,
-              public tempMax:string){}
+              public tempMax:string,
+              public img:string){}
 }
